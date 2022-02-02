@@ -1,5 +1,6 @@
+using InterestRateCalculator.DataProvider;
+using InterestRateCalculator.Domain;
 using InterestRateCalculator.WebApp.Data;
-using InterestRateCalculator.WebApp.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

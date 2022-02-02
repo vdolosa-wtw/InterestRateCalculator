@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterestRateCalculator.WebA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterestRateCalculator.Domain", "InterestRateCalculator.Domain\InterestRateCalculator.Domain.csproj", "{52E2A5F7-EF6D-4D5E-A23D-EEF9EA5E4508}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterestRateCalculator.Data", "InterestRateCalculator.Data\InterestRateCalculator.Data.csproj", "{53DBCF88-AD44-4AD1-A11E-91830D99ED0B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterestRateCalculator.DataProvider", "InterestRateCalculator.Data\InterestRateCalculator.DataProvider.csproj", "{53DBCF88-AD44-4AD1-A11E-91830D99ED0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterestRateCalculator.Infrastructure", "InterestRateCalculator.Infrastructure\InterestRateCalculator.Infrastructure.csproj", "{81B1CB89-5F6B-4769-A239-8F88852CE369}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{53DBCF88-AD44-4AD1-A11E-91830D99ED0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53DBCF88-AD44-4AD1-A11E-91830D99ED0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53DBCF88-AD44-4AD1-A11E-91830D99ED0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81B1CB89-5F6B-4769-A239-8F88852CE369}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81B1CB89-5F6B-4769-A239-8F88852CE369}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81B1CB89-5F6B-4769-A239-8F88852CE369}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81B1CB89-5F6B-4769-A239-8F88852CE369}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,11 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace InterestRateCalculator.WebApp.Models
+namespace InterestRateCalculator.Domain
 {
-    //public class ApplicationUser : IdentityUser
-    //{
-    //}
+    public class ApplicationUser : IdentityUser
+    {
+    }
 }
