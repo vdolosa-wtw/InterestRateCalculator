@@ -4,14 +4,16 @@ using InterestRateCalculator.DataProvider;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace InterestRateCalculator.DataProvider.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220203115154_ChangedInterestConfigurationSeedDataConfigName")]
+    partial class ChangedInterestConfigurationSeedDataConfigName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -196,8 +198,8 @@ namespace InterestRateCalculator.DataProvider.Migrations
                     b.Property<string>("ConfigName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Value")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double>("Value")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
@@ -206,21 +208,21 @@ namespace InterestRateCalculator.DataProvider.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("75e23f72-a95a-4bf1-9350-4dc3824aa648"),
+                            Id = new Guid("ac3c3163-1a46-42a8-848f-20e461cc8f27"),
                             ConfigName = "INTEREST_LOWER_BOUND",
-                            Value = 0.1m
+                            Value = 0.10000000000000001
                         },
                         new
                         {
-                            Id = new Guid("e17f70c3-2f33-473e-ae25-724a0a26fa01"),
+                            Id = new Guid("6906b351-077a-4908-b56d-8e58bed1010f"),
                             ConfigName = "INTEREST_UPPER_BOUND",
-                            Value = 0.5m
+                            Value = 0.5
                         },
                         new
                         {
-                            Id = new Guid("0b810e21-f8fc-4dd9-8a97-774caee0504f"),
+                            Id = new Guid("628e5164-d718-4cd5-b49c-ebaf616b88d0"),
                             ConfigName = "INTEREST_INCREMENTAL",
-                            Value = 0.2m
+                            Value = 0.20000000000000001
                         });
                 });
 

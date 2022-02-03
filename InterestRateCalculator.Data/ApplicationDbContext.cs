@@ -29,19 +29,19 @@ namespace InterestRateCalculator.DataProvider
                     .HasData(new InterestConfiguration
                     {
                         Id = Guid.NewGuid(),
-                        ConfigName = nameof(InterestConfiguration.DEFAULT_INTEREST_LOWER),
+                        ConfigName = InterestConfiguration.NAME_INTEREST_LOWER,
                         Value = InterestConfiguration.DEFAULT_INTEREST_LOWER
                     },
                     new InterestConfiguration
                     {
                         Id = Guid.NewGuid(),
-                        ConfigName = nameof(InterestConfiguration.DEFAULT_INTEREST_UPPER),
+                        ConfigName = InterestConfiguration.NAME_INTEREST_UPPER,
                         Value = InterestConfiguration.DEFAULT_INTEREST_UPPER
                     },
                     new InterestConfiguration
                     {
                         Id = Guid.NewGuid(),
-                        ConfigName = nameof(InterestConfiguration.DEFAULT_INTEREST_INCREMENTAL),
+                        ConfigName = InterestConfiguration.NAME_INTEREST_INCREMENTAL,
                         Value = InterestConfiguration.DEFAULT_INTEREST_INCREMENTAL
                     });
 

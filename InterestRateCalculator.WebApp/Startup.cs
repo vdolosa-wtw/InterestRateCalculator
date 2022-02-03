@@ -34,6 +34,8 @@ namespace InterestRateCalculator.WebApp
 
             services.AddTransient<IRepository<InterestConfiguration>, InterestConfigurationRepository>();
 
+            services.AddTransient<IInterestCalculator, InterestCalculator>();
+
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
