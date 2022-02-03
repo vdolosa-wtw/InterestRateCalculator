@@ -13,6 +13,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using System;
+using System.IO;
+using System.Reflection;
 
 namespace InterestRateCalculator.WebApp
 {
@@ -58,6 +61,11 @@ namespace InterestRateCalculator.WebApp
                     Title = "Interest Rate Calculator API",
                     Description = "API for the Interest Rate Calculator"
                 });
+
+                // Set the comments path for the Swagger JSON and UI.
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                option.IncludeXmlComments(xmlPath);
             });
 
             // In production, the Angular files will be served from this directory
