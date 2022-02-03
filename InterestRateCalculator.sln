@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterestRateCalculator.Doma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterestRateCalculator.DataProvider", "InterestRateCalculator.Data\InterestRateCalculator.DataProvider.csproj", "{53DBCF88-AD44-4AD1-A11E-91830D99ED0B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{01AAE50B-E7CC-4FBD-8B61-D6D72E87A487}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterestRateCalculator.WebApp.Test", "InterestRateCalculator.WebApp.Test\InterestRateCalculator.WebApp.Test.csproj", "{A3B832E4-567E-42F5-A20A-BEA501018431}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +31,16 @@ Global
 		{53DBCF88-AD44-4AD1-A11E-91830D99ED0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53DBCF88-AD44-4AD1-A11E-91830D99ED0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53DBCF88-AD44-4AD1-A11E-91830D99ED0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3B832E4-567E-42F5-A20A-BEA501018431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3B832E4-567E-42F5-A20A-BEA501018431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3B832E4-567E-42F5-A20A-BEA501018431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3B832E4-567E-42F5-A20A-BEA501018431}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A3B832E4-567E-42F5-A20A-BEA501018431} = {01AAE50B-E7CC-4FBD-8B61-D6D72E87A487}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4A7B7BBF-610F-4CCC-B303-65443CD1B2F0}
