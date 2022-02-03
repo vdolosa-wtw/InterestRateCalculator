@@ -12,6 +12,8 @@ namespace InterestRateCalculator.Domain
         public const double DEFAULT_INTEREST_UPPER = 0.5;
         public const double DEFAULT_INTEREST_INCREMENTAL = 0.2;
 
+        public Guid Id { get; set; }
+
         public string ConfigName { get; set; }
 
         public double Value { get; set; }

@@ -29,7 +29,10 @@ namespace InterestRateCalculator.WebApp
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString("DefaultConnection"),
+                    x => x.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+
+            services.AddTransient<IRepository<InterestConfiguration>, InterestConfigurationRepository>();
 
             services.AddDatabaseDeveloperPageExceptionFilter();
 

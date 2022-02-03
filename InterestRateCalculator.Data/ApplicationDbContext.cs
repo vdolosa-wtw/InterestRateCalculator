@@ -18,5 +18,34 @@ namespace InterestRateCalculator.DataProvider
             IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
         {
         }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<InterestConfiguration>()
+                    .Property(x => x.Id)
+                    .ValueGeneratedOnAdd();
+
+            builder.Entity<InterestConfiguration>()
+                    .HasData(new InterestConfiguration
+                    {
+                        Id = Guid.NewGuid(),
+                        ConfigName = nameof(InterestConfiguration.DEFAULT_INTEREST_LOWER),
+                        Value = InterestConfiguration.DEFAULT_INTEREST_LOWER
+                    },
+                    new InterestConfiguration
+                    {
+                        Id = Guid.NewGuid(),
+                        ConfigName = nameof(InterestConfiguration.DEFAULT_INTEREST_UPPER),
+                        Value = InterestConfiguration.DEFAULT_INTEREST_UPPER
+                    },
+                    new InterestConfiguration
+                    {
+                        Id = Guid.NewGuid(),
+                        ConfigName = nameof(InterestConfiguration.DEFAULT_INTEREST_INCREMENTAL),
+                        Value = InterestConfiguration.DEFAULT_INTEREST_INCREMENTAL
+                    });
+
+            base.OnModelCreating(builder);
+        }
     }
 }
