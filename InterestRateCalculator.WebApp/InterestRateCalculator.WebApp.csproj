@@ -38,7 +38,6 @@
   <ItemGroup>
     <ProjectReference Include="..\InterestRateCalculator.Data\InterestRateCalculator.DataProvider.csproj" />
     <ProjectReference Include="..\InterestRateCalculator.Domain\InterestRateCalculator.Domain.csproj" />
-    <ProjectReference Include="..\InterestRateCalculator.Infrastructure\InterestRateCalculator.Infrastructure.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
