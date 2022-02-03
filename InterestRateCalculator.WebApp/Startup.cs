@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 
 namespace InterestRateCalculator.WebApp
 {
@@ -48,6 +49,17 @@ namespace InterestRateCalculator.WebApp
                 .AddIdentityServerJwt();
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            services.AddSwaggerGen(option => 
+            {
+                option.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Interest Rate Calculator API",
+                    Description = "API for the Interest Rate Calculator"
+                });
+            });
+
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -88,6 +100,12 @@ namespace InterestRateCalculator.WebApp
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(option => 
+            {
+                option.SwaggerEndpoint("/swagger/v1/swagger.json", "Interest Rate Calculator API v1");
             });
 
             app.UseSpa(spa =>

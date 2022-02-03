@@ -19,6 +19,7 @@ namespace InterestRateCalculator.WebApp.Controllers
             this.interestCalculator = interestCalculator;
         }
 
+        [HttpGet]
         public IEnumerable<CalculationResult> Get(decimal value, int years)
         {
             return this.interestCalculator.Calculate(value, years);
