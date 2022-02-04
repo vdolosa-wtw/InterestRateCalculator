@@ -28,6 +28,15 @@ export class InterestRateCalculatorComponent implements OnInit {
       this.calculationResults = result;
     }, error => console.error(error));    
   }
+
+  onSaveResults(): void {
+
+    if (confirm("Are you sure you want to save this computation results?")) {
+      console.log("saved!");
+    } else {
+      console.log("not saved!");
+    }
+  }
 }
 
 interface CalculationResult {
