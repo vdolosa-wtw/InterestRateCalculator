@@ -1,0 +1,36 @@
+<h1 id="tableLabel">Interest rate calculator</h1>
+
+<p>This page is for calculating interest rates.</p>
+
+<form #formCalculate (ngSubmit)="onCalculate()">
+  <p>
+    <label>Amount: </label>
+    <input type="number" id="amount" name="amount" [(ngModel)]="amount" required />
+  </p>
+  <p>
+    <label>Years: </label>
+    <input type="number" id="years" name="years" [(ngModel)]="years" required />
+  </p>
+  <p>
+    <button type="submit">Calculate</button>
+  </p>
+</form>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="calculationResults">
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Value</th>
+      <th>Interest Rate</th>
+      <th>Future Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let result of calculationResults">
+      <td>{{result.year}}</td>
+      <td>{{result.currentValue}}</td>
+      <td>{{result.interestRate | percent }}</td>
+      <td>{{result.futureValue}}</td>
+    </tr>
+  </tbody>
+</table>
