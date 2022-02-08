@@ -1,11 +1,10 @@
+using InterestRateCalculator.Domain.Models;
+using InterestRateCalculator.Domain.Repositories;
 using InterestRateCalculator.Domain.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using ObjectsComparer;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 
 namespace InterestRateCalculator.Domain.Test
 {

@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using InterestRateCalculator.Domain;
+using InterestRateCalculator.Domain.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using InterestRateCalculator.Domain.Models;
 
 namespace InterestRateCalculator.WebApp.Areas.Identity.Pages.Account
 {

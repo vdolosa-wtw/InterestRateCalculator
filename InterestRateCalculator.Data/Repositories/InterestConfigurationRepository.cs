@@ -1,11 +1,6 @@
-﻿using InterestRateCalculator.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using InterestRateCalculator.Domain.Models;
 
-namespace InterestRateCalculator.DataProvider
+namespace InterestRateCalculator.DataProvider.Repositories
 {
     public class InterestConfigurationRepository: BaseRepository<InterestConfiguration>
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InterestRateCalculator.Domain
+namespace InterestRateCalculator.Domain.Models
 {
     public class CalculationResult
     {

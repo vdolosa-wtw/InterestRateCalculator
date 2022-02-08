@@ -1,14 +1,10 @@
 ﻿using IdentityServer4.EntityFramework.Options;
 using InterestRateCalculator.DataProvider.Models;
-using InterestRateCalculator.Domain;
+using InterestRateCalculator.Domain.Models;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InterestRateCalculator.DataProvider
 {

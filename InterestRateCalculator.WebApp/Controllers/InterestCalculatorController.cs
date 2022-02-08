@@ -1,11 +1,10 @@
-﻿using InterestRateCalculator.Domain;
+﻿using InterestRateCalculator.Domain.Models;
+using InterestRateCalculator.Domain.Repositories;
+using InterestRateCalculator.Domain.Services;
 using InterestRateCalculator.WebApp.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace InterestRateCalculator.WebApp.Controllers
 {

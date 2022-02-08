@@ -1,5 +1,7 @@
 using InterestRateCalculator.DataProvider;
-using InterestRateCalculator.Domain;
+using InterestRateCalculator.DataProvider.Repositories;
+using InterestRateCalculator.Domain.Models;
+using InterestRateCalculator.Domain.Repositories;
 using InterestRateCalculator.Domain.Services;
 using InterestRateCalculator.WebApp.Data;
 using Microsoft.AspNetCore.Authentication;

@@ -1,5 +1,7 @@
 ﻿using InterestRateCalculator.DataProvider.Models;
 using InterestRateCalculator.Domain;
+using InterestRateCalculator.Domain.Models;
+using InterestRateCalculator.Domain.Repositories;
 using InterestRateCalculator.Domain.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -12,7 +14,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InterestRateCalculator.DataProvider
+namespace InterestRateCalculator.DataProvider.Repositories
 {
     public class CalculationSessionRepository : IRepository<CalculationSession>
     {

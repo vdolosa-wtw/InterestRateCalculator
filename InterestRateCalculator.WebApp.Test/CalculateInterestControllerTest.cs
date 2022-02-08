@@ -1,4 +1,4 @@
-using InterestRateCalculator.Domain;
+using InterestRateCalculator.Domain.Services;
 using InterestRateCalculator.WebApp.Controllers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;

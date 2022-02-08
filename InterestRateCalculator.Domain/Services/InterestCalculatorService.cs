@@ -1,11 +1,10 @@
-﻿using InterestRateCalculator.Domain.Services;
+﻿using InterestRateCalculator.Domain.Models;
+using InterestRateCalculator.Domain.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace InterestRateCalculator.Domain
+namespace InterestRateCalculator.Domain.Services
 {
     public class InterestCalculatorService: IInterestCalculatorService
     {

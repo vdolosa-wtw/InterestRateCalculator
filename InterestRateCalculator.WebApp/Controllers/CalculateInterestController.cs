@@ -1,4 +1,5 @@
-﻿using InterestRateCalculator.Domain;
+﻿using InterestRateCalculator.Domain.Models;
+using InterestRateCalculator.Domain.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

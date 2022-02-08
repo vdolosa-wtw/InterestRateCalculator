@@ -1,5 +1,5 @@
 ﻿using IdentityServer4.EntityFramework.Options;
-using InterestRateCalculator.Domain;
+using InterestRateCalculator.Domain.Models;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;

@@ -1,5 +1,5 @@
 using System.Threading.Tasks;
-using InterestRateCalculator.Domain;
+using InterestRateCalculator.Domain.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
