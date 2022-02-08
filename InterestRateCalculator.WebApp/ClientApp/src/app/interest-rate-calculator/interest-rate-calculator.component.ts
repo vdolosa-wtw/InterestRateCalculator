@@ -1,5 +1,7 @@
 import { HttpParams } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { config } from 'rxjs';
 import { CalculationResult, CalculationSession, WebApiService } from '../shared/web-api.service';
 
 @Component({
@@ -16,7 +18,8 @@ export class InterestRateCalculatorComponent implements OnInit {
 
   public isSaving: boolean = false;
 
-  constructor(private webApi: WebApiService, @Inject('BASE_URL') baseUrl: string) { }
+  constructor(private webApi: WebApiService,
+              private snackBar: MatSnackBar) { }
 
   ngOnInit() {
   }
@@ -45,6 +48,9 @@ export class InterestRateCalculatorComponent implements OnInit {
       };
 
       this.webApi.post<CalculationSession>('InterestCalculator', data).subscribe(result => {
+        this.snackBar.open("Saved successfully!", "Close", {
+          duration: 2000
+        });
         this.calculationSession = result;
         this.isSaving = false;
       }, error => {
