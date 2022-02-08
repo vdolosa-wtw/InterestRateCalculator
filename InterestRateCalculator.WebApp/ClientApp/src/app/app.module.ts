@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -14,6 +15,7 @@ import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { InterestRateCalculatorComponent } from './interest-rate-calculator/interest-rate-calculator.component';
 import { CalculationSessionComponent } from './calculation-session/calculation-session.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { CalculationSessionComponent } from './calculation-session/calculation-s
       { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
       { path: 'calculate', component: InterestRateCalculatorComponent, canActivate: [AuthorizeGuard] },
       { path: 'sessions', component: CalculationSessionComponent, canActivate: [AuthorizeGuard] }
-    ])
+    ]),
+    BrowserAnimationsModule,
+    MatPaginatorModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }

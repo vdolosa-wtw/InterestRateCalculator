@@ -1,16 +1,5 @@
 <h1 id="tableLabel">Calculation Sessions</h1>
 
-<!--<div>
-  <p>
-    <label>Page Size: </label>
-    <select [(ngModel)]="pageSize">
-      <option>5</option>
-      <option>10</option>
-      <option>15</option>
-      <option>20</option>
-    </select>
-  </p>
-</div>-->
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="calculationSessionsList?.sessions">
   <thead>
     <tr>
@@ -27,3 +16,9 @@
     </tr>
   </tbody>
 </table>
+
+<mat-paginator [length]="itemCount"
+               [pageSize]="pageSize"
+               [pageSizeOptions]="[5, 10, 15, 20]"
+               (page)="pageEvent = onPaginatorChange($event)">
+</mat-paginator>
