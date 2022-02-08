@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InterestRateCalculator.Domain.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,14 +7,19 @@ using System.Threading.Tasks;
 
 namespace InterestRateCalculator.Domain
 {
-    public class InterestCalculator: IInterestCalculator
+    public class InterestCalculatorService: IInterestCalculatorService
     {
-        protected IRepository<InterestConfiguration> interestConfiguration;
+        protected readonly IRepository<InterestConfiguration> interestConfiguration;
+        protected readonly IRepository<CalculationSession> calculationSession;
+        protected readonly IUserService userService;
 
-
-        public InterestCalculator(IRepository<InterestConfiguration> interestConfiguration)
+        public InterestCalculatorService(IRepository<InterestConfiguration> interestConfiguration,
+                                    IRepository<CalculationSession> calculationSession,
+                                    IUserService userService)
         {
             this.interestConfiguration = interestConfiguration;
+            this.calculationSession = calculationSession;
+            this.userService = userService;
         }
 
         #region Properties
@@ -118,6 +124,24 @@ namespace InterestRateCalculator.Domain
                 yield break;
             }
 
+        }
+
+        public CalculationSession SaveCalculationSession(decimal value, int years, ICollection<CalculationResult> results)
+        {
+            var session = new CalculationSession
+            {
+                DateTime = DateTime.UtcNow,
+                Value = value,
+                Years = years,
+                Results = results,
+                UserId = this.userService.CurrentUser.Id
+            };
+
+            var sesh = this.calculationSession.Add(session);
+
+            this.calculationSession.SaveChanges();
+
+            return sesh;
         }
     }
 }

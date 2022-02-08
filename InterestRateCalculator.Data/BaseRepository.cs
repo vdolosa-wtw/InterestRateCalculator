@@ -10,7 +10,7 @@ namespace InterestRateCalculator.DataProvider
 {
     public abstract class BaseRepository<T> : IRepository<T> where T : class
     {
-        protected ApplicationDbContext dbContext;
+        protected readonly ApplicationDbContext dbContext;
 
         public BaseRepository(ApplicationDbContext dbContext)
         {
@@ -20,6 +20,11 @@ namespace InterestRateCalculator.DataProvider
         public virtual T Add(T entity)
         {
             return this.dbContext.Add(entity).Entity;
+        }
+
+        public int Count()
+        {
+            return this.dbContext.Set<T>().Count();
         }
 
         public virtual IEnumerable<T> Find(Expression<Func<T, bool>> predicate)

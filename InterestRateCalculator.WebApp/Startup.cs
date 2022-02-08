@@ -1,5 +1,6 @@
 using InterestRateCalculator.DataProvider;
 using InterestRateCalculator.Domain;
+using InterestRateCalculator.Domain.Services;
 using InterestRateCalculator.WebApp.Data;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
@@ -37,8 +38,10 @@ namespace InterestRateCalculator.WebApp
                     x => x.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
             services.AddTransient<IRepository<InterestConfiguration>, InterestConfigurationRepository>();
+            services.AddTransient<IRepository<CalculationSession>, CalculationSessionRepository>();
 
-            services.AddTransient<IInterestCalculator, InterestCalculator>();
+            services.AddTransient<IInterestCalculatorService, InterestCalculatorService>();
+            services.AddTransient<IUserService, UserService>();
 
             services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -49,8 +52,13 @@ namespace InterestRateCalculator.WebApp
                 .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
 
             services.AddAuthentication()
-                .AddIdentityServerJwt();
-            services.AddControllersWithViews();
+                .AddIdentityServerJwt();            
+
+            services.AddControllersWithViews()
+                .AddNewtonsoftJson(options => {
+                    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+                });
+
             services.AddRazorPages();
 
             services.AddSwaggerGen(option => 

@@ -16,7 +16,7 @@
   </p>
 </form>
 
-<!--<button *ngIf="calculationResults" (click)="onSaveResults()">Save Results</button>-->
+<button *ngIf="calculationResults" (click)="onSaveResults()" [attr.disabled]="isSaving? true : null">{{ isSaving ? "saving..." : "Save Results" }}</button>
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="calculationResults">
   <thead>
     <tr>

@@ -11,7 +11,7 @@ namespace InterestRateCalculator.WebApp.Test
         [TestMethod]
         public void CanCallGetFromCalculateInterestController()
         {
-            var interestCalculator = new Mock<IInterestCalculator>();
+            var interestCalculator = new Mock<IInterestCalculatorService>();
             var calculateInterestController = new CalculateInterestController(interestCalculator.Object);
             calculateInterestController.Get(0, 0);
 

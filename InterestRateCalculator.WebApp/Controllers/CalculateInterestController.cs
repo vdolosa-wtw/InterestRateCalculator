@@ -1,4 +1,5 @@
 ﻿using InterestRateCalculator.Domain;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -8,13 +9,14 @@ using System.Threading.Tasks;
 
 namespace InterestRateCalculator.WebApp.Controllers
 {
+    [Authorize]
     [Route("[controller]")]
-    [ApiController]
+    [ApiController]    
     public class CalculateInterestController : ControllerBase
     {
-        protected IInterestCalculator interestCalculator;
+        protected readonly IInterestCalculatorService interestCalculator;
 
-        public CalculateInterestController(IInterestCalculator interestCalculator)
+        public CalculateInterestController(IInterestCalculatorService interestCalculator)
         {
             this.interestCalculator = interestCalculator;
         }

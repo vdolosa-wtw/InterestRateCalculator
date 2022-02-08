@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace InterestRateCalculator.Domain
 {
-    public interface IInterestCalculator
+    public interface IInterestCalculatorService
     {
         public IEnumerable<CalculationResult> Calculate(decimal value, int years);
+
+        public CalculationSession SaveCalculationSession(decimal value, int years, ICollection<CalculationResult> results);
     }
 }

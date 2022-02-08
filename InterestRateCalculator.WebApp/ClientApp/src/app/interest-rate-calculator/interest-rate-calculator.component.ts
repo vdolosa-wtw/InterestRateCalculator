@@ -1,6 +1,6 @@
 import { HttpParams } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
-import { WebApiService } from '../shared/web-api.service';
+import { CalculationResult, CalculationSession, WebApiService } from '../shared/web-api.service';
 
 @Component({
   selector: 'app-interest-rate-calculator',
@@ -12,6 +12,9 @@ export class InterestRateCalculatorComponent implements OnInit {
   public amount: number = 1000;
   public years: number = 4;
   public calculationResults: CalculationResult[];
+  public calculationSession: CalculationSession;
+
+  public isSaving: boolean = false;
 
   constructor(private webApi: WebApiService, @Inject('BASE_URL') baseUrl: string) { }
 
@@ -31,17 +34,27 @@ export class InterestRateCalculatorComponent implements OnInit {
 
   onSaveResults(): void {
 
-    if (confirm("Are you sure you want to save this computation results?")) {
-      console.log("saved!");
-    } else {
-      console.log("not saved!");
+    if (confirm("Are you sure you want to save this computation results?")) {      
+
+      this.isSaving = true;
+
+      let data = {
+        "value": this.amount,
+        "years": this.years,
+        "results": this.calculationResults
+      };
+
+      this.webApi.post<CalculationSession>('InterestCalculator', data).subscribe(result => {
+        this.calculationSession = result;
+        this.isSaving = false;
+      }, error => {
+        this.isSaving = false;
+        console.error(error);
+      });
+
     }
+
   }
 }
 
-interface CalculationResult {
-  year: number,
-  currentValue: number,
-  interestRate: number,
-  futureValue: number
-}
+

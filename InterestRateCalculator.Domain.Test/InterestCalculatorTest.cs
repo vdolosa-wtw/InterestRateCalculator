@@ -1,3 +1,4 @@
+using InterestRateCalculator.Domain.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using ObjectsComparer;
@@ -15,7 +16,9 @@ namespace InterestRateCalculator.Domain.Test
         public void CanCalculateCorrectly()
         {
             var interestConfiguration = new Mock<IRepository<InterestConfiguration>>();
-            var interestCalculator = new InterestCalculator(interestConfiguration.Object);
+            var calculationSession = new Mock<IRepository<CalculationSession>>();
+            var userService = new Mock<IUserService>();
+            var interestCalculator = new InterestCalculatorService(interestConfiguration.Object, calculationSession.Object, userService.Object);
             var comparer = new ObjectsComparer.Comparer<IEnumerable<CalculationResult>>();
 
             interestConfiguration.Setup(x => x.Find(p => p.ConfigName == InterestConfiguration.NAME_INTEREST_UPPER))

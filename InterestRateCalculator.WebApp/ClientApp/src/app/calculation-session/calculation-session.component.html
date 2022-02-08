@@ -1,0 +1,29 @@
+<h1 id="tableLabel">Calculation Sessions</h1>
+
+<!--<div>
+  <p>
+    <label>Page Size: </label>
+    <select [(ngModel)]="pageSize">
+      <option>5</option>
+      <option>10</option>
+      <option>15</option>
+      <option>20</option>
+    </select>
+  </p>
+</div>-->
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="calculationSessionsList?.sessions">
+  <thead>
+    <tr>
+      <th>Date/Time</th>
+      <th>Value</th>
+      <th>Years</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let session of calculationSessionsList?.sessions">
+      <td>{{session.dateTime | date:'short'}}</td>
+      <td>{{session.value}}</td>
+      <td>{{session.years}}</td>
+    </tr>
+  </tbody>
+</table>

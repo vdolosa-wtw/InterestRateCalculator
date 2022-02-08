@@ -16,6 +16,8 @@ namespace InterestRateCalculator.Domain
 
         IEnumerable<T> Get(int page = 0, int itemCount = 10);
 
+        int Count();
+
         IEnumerable<T> Find(Expression<Func<T, bool>> predicate);
 
         void SaveChanges();

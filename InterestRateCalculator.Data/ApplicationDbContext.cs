@@ -1,4 +1,5 @@
 ﻿using IdentityServer4.EntityFramework.Options;
+using InterestRateCalculator.DataProvider.Models;
 using InterestRateCalculator.Domain;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +22,17 @@ namespace InterestRateCalculator.DataProvider
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<CalculationResultDataModel>()
+                    .HasKey(cr => cr.Id);
+
+            builder.Entity<CalculationSessionDataModel>()
+                    .Ignore(cs => cs.Results);
+
+            builder.Entity<CalculationSessionDataModel>()
+                    .HasMany(cs => cs.CalculationResults)
+                    .WithOne(cr => cr.Session)
+                    .OnDelete(DeleteBehavior.Cascade);            
+
             builder.Entity<InterestConfiguration>()
                     .Property(x => x.Id)
                     .ValueGeneratedOnAdd();

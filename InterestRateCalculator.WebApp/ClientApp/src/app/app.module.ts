@@ -13,6 +13,7 @@ import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.
 import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { InterestRateCalculatorComponent } from './interest-rate-calculator/interest-rate-calculator.component';
+import { CalculationSessionComponent } from './calculation-session/calculation-session.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { InterestRateCalculatorComponent } from './interest-rate-calculator/inte
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    InterestRateCalculatorComponent
+    InterestRateCalculatorComponent,
+    CalculationSessionComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -32,7 +34,8 @@ import { InterestRateCalculatorComponent } from './interest-rate-calculator/inte
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
-      { path: 'calculate', component: InterestRateCalculatorComponent, canActivate: [AuthorizeGuard]}
+      { path: 'calculate', component: InterestRateCalculatorComponent, canActivate: [AuthorizeGuard] },
+      { path: 'sessions', component: CalculationSessionComponent, canActivate: [AuthorizeGuard] }
     ])
   ],
   providers: [
