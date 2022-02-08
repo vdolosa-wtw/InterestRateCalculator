@@ -15,7 +15,7 @@ namespace InterestRateCalculator.WebApp.Test
             var calculateInterestController = new CalculateInterestController(interestCalculator.Object);
             calculateInterestController.Get(0, 0);
 
-            interestCalculator.Verify(calc => calc.Calculate(It.IsAny<decimal>(), It.IsAny<int>()), Times.AtMostOnce());
+            interestCalculator.Verify(calc => calc.Calculate(It.IsAny<decimal>(), It.IsAny<int>()), Times.Once());
         }
     }
 }

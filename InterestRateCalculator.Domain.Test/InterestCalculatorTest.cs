@@ -85,5 +85,21 @@ namespace InterestRateCalculator.Domain.Test
 
             Assert.IsTrue(isEqual);
         }
+
+        [TestMethod]
+        public void CanSaveCalculationSession()
+        {
+            var interestConfiguration = new Mock<IRepository<InterestConfiguration>>();
+            var calculationSession = new Mock<IRepository<CalculationSession>>();
+            var userService = new Mock<IUserService>();
+            var interestCalculator = new InterestCalculatorService(interestConfiguration.Object, calculationSession.Object, userService.Object);
+
+            userService.Setup(x => x.CurrentUser).Returns(new ApplicationUser { Id = It.IsAny<string>() });
+
+            interestCalculator.SaveCalculationSession(0, 0, new List<CalculationResult>());
+
+            calculationSession.Verify(service => service.Add(It.IsAny<CalculationSession>()), Times.Once());
+            calculationSession.Verify(service => service.SaveChanges(), Times.Once());
+        }
     }
 }
