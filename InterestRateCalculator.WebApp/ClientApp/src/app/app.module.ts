@@ -13,7 +13,7 @@ import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.
 import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { InterestRateCalculatorComponent } from './interest-rate-calculator/interest-rate-calculator.component';
-import { CalculationSessionComponent } from './calculation-session/calculation-session.component';
+import { CalculationSessionListComponent } from './calculation-session/calculation-session-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -22,7 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NavMenuComponent,
     HomeComponent,    
     InterestRateCalculatorComponent,
-    CalculationSessionComponent
+    CalculationSessionListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -32,7 +32,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },      
       { path: 'calculate', component: InterestRateCalculatorComponent, canActivate: [AuthorizeGuard] },
-      { path: 'sessions', component: CalculationSessionComponent, canActivate: [AuthorizeGuard] }
+      { path: 'sessions', component: CalculationSessionListComponent, canActivate: [AuthorizeGuard] }
     ]),
     BrowserAnimationsModule,
     MatPaginatorModule,

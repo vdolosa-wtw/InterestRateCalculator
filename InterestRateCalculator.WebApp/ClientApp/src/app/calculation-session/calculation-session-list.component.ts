@@ -5,11 +5,10 @@ import { CalculationSession } from '../shared/calculation-session';
 import { WebApiService } from '../shared/web-api.service';
 
 @Component({
-  selector: 'app-calculation-session',
-  templateUrl: './calculation-session.component.html',
-  styleUrls: ['./calculation-session.component.css']
+  templateUrl: './calculation-session-list.component.html',
+  styleUrls: ['./calculation-session-list.component.css']
 })
-export class CalculationSessionComponent implements OnInit {
+export class CalculationSessionListComponent implements OnInit {
 
   public calculationSessionsList: CalculationSessionsList
 

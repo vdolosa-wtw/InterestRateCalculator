@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CalculationSessionComponent } from './calculation-session.component';
+import { CalculationSessionComponent } from './calculation-session-list.component';
 
 describe('CalculationSessionComponent', () => {
   let component: CalculationSessionComponent;
