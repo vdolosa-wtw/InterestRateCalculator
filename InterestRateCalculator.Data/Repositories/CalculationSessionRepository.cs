@@ -67,8 +67,6 @@ namespace InterestRateCalculator.DataProvider.Repositories
         {
             return this.dbContext.Set<CalculationSessionDataModel>()
                         .AsQueryable()
-                        .Include(p => p.CalculationResults)
-                        .Include(p => p.User)
                         .Skip(page * itemCount)
                         .Take(itemCount)
                         .ToList()
