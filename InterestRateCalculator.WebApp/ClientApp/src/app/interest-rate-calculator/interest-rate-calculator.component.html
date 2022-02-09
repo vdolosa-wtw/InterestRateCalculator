@@ -2,21 +2,19 @@
 
 <p>This page is for calculating interest rates.</p>
 
-<form #formCalculate (ngSubmit)="onCalculate()">
-  <p>
-    <label>Amount: </label>
-    <input type="number" id="amount" name="amount" [(ngModel)]="amount" required />
-  </p>
-  <p>
-    <label>Years: </label>
-    <input type="number" id="years" name="years" [(ngModel)]="years" required />
-  </p>
-  <p>
-    <button type="submit">Calculate</button>
-  </p>
+<form #formCalculate (ngSubmit)="onCalculate()" class="form-group col-12">
+  <div class="form-row">
+    <label for="amount" class="col-2">Amount</label>
+    <input type="number" class="form-control col-2" id="amount" name="amount" [(ngModel)]="amount" required />
+  </div>
+  <div class="form-row">
+    <label for="years" class="col-2">Years</label>
+    <input type="number" class="form-control col-2" id="years" name="years" [(ngModel)]="years" required />
+  </div>
+  <button type="submit" class="btn btn-primary">Calculate</button>  
 </form>
 
-<button *ngIf="calculationResults" (click)="onSaveResults()" [attr.disabled]="isSaving? true : null">{{ isSaving ? "saving..." : "Save Results" }}</button>
+<button class="btn btn-secondary" *ngIf="calculationResults" (click)="onSaveResults()" [attr.disabled]="isSaving? true : null">{{ isSaving ? "saving..." : "Save Results" }}</button>
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="calculationResults">
   <thead>
     <tr>

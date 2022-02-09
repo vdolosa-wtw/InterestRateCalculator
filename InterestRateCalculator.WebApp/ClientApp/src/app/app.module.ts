@@ -16,6 +16,7 @@ import { InterestRateCalculatorComponent } from './interest-rate-calculator/inte
 import { CalculationSessionListComponent } from './calculation-session/calculation-session-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalculationSessionDetailsComponent } from './calculation-session/calculation-session-details/calculation-session-details.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { CalculationSessionDetailsComponent } from './calculation-session/calcul
     ]),
     BrowserAnimationsModule,
     MatPaginatorModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    NgbModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }
