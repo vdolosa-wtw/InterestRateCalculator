@@ -13,4 +13,4 @@ Phase 1 coding exam
 ## How to add migration?
 1. Open the Package Manager Console
 2. Make sure that the selected Default Project is 'InteresetRateCalculator.WebApp'
-3. Execute the command 'add-migration [migration name] -project InteresetRateCalculator.DataProvider'
+3. Execute the command 'add-migration [migration name] -project InterestRateCalculator.DataProvider'
