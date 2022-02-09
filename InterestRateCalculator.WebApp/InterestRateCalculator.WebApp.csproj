@@ -37,12 +37,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\shared\calculation-result.ts" />
+    <None Remove="ClientApp\src\app\shared\calculation-session.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\InterestRateCalculator.Data\InterestRateCalculator.DataProvider.csproj" />
     <ProjectReference Include="..\InterestRateCalculator.Domain\InterestRateCalculator.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\src\app\shared\" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\calculation-result.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\calculation-session.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

@@ -2,7 +2,9 @@ import { HttpParams } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { config } from 'rxjs';
-import { CalculationResult, CalculationSession, WebApiService } from '../shared/web-api.service';
+import { CalculationResult } from '../shared/calculation-result';
+import { CalculationSession } from '../shared/calculation-session';
+import { WebApiService } from '../shared/web-api.service';
 
 @Component({
   selector: 'app-interest-rate-calculator',

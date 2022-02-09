@@ -22,17 +22,3 @@ export class WebApiService {
     return this.http.post<Type>(this.baseUrl + apiUrl, body);
   }
 }
-
-export interface CalculationSession {
-  id: string,
-  dateTime: Date,
-  userId: string,
-  results: CalculationResult
-}
-
-export interface CalculationResult {
-  year: number,
-  currentValue: number,
-  interestRate: number,
-  futureValue: number
-}

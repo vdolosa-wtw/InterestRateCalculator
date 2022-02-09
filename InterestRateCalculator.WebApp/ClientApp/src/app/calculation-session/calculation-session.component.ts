@@ -1,7 +1,8 @@
 import { HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
-import { CalculationSession, WebApiService } from '../shared/web-api.service';
+import { CalculationSession } from '../shared/calculation-session';
+import { WebApiService } from '../shared/web-api.service';
 
 @Component({
   selector: 'app-calculation-session',
