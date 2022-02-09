@@ -1,0 +1,30 @@
+<h1>Calculation Session Details</h1>
+
+<div *ngIf="calculationSession">
+  <p>
+    <label>Amount: </label>
+    <label>{{calculationSession.value}}</label>
+  </p>
+  <p>
+    <label>Years: </label>
+    <label>{{calculationSession.years}}</label>
+  </p>
+  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="calculationSession.results">
+    <thead>
+      <tr>
+        <th>Year</th>
+        <th>Value</th>
+        <th>Interest Rate</th>
+        <th>Future Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let result of calculationSession.results">
+        <td>{{result.year}}</td>
+        <td>{{result.currentValue}}</td>
+        <td>{{result.interestRate | percent }}</td>
+        <td>{{result.futureValue}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

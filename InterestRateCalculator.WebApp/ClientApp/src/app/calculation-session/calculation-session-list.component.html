@@ -1,4 +1,4 @@
-<h1 id="tableLabel">Calculation Sessions</h1>
+<h1>Calculation Sessions</h1>
 
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="calculationSessionsList?.sessions">
   <thead>
@@ -10,7 +10,11 @@
   </thead>
   <tbody>
     <tr *ngFor="let session of calculationSessionsList?.sessions">
-      <td>{{session.dateTime | date:'short'}}</td>
+      <td>
+        <a [routerLink]="['/session', session.id]">
+          {{session.dateTime | date:'short'}}
+        </a>        
+      </td>
       <td>{{session.value}}</td>
       <td>{{session.years}}</td>
     </tr>
